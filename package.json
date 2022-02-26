@@ -1,0 +1,48 @@
+{
+  "name": "webpack-react-boilerplate",
+  "version": "1.0.0",
+  "description": "A React ready Webpack boilerplate",
+  "main": "src/main.js",
+  "scripts": {
+    "build": "webpack --mode=production",
+    "start": "webpack serve --mode=development --client-progress",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Cristian Elias <cristian.ricardo.elias@gmail.com>",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@emotion/react": "^11.8.1",
+    "@emotion/styled": "^11.8.1",
+    "@fontsource/antonio": "^4.5.3",
+    "@fontsource/spartan": "^4.5.4",
+    "emotion-reset": "^3.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.6",
+    "react-router-dom": "^6.2.1",
+    "redux": "^4.1.2"
+  },
+  "devDependencies": {
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/preset-react": "^7.16.7",
+    "@emotion/babel-plugin": "^11.7.2",
+    "@squoosh/lib": "^0.4.0",
+    "babel-loader": "^8.2.3",
+    "css-loader": "^6.6.0",
+    "esbuild-loader": "^2.18.0",
+    "eslint": "^8.8.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "image-minimizer-webpack-plugin": "^3.2.3",
+    "prettier": "^2.5.1",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.68.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4"
+  }
+}
