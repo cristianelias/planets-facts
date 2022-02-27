@@ -1,11 +1,12 @@
 // Dependencies
+import { forwardRef } from "react";
 import { Link } from "react-router-dom";
 
 // Assets
 import iconChevron from "../assets/icon-chevron.svg";
 
-const PlanetLinksSmall = ({ planets }) => (
-  <aside className="header-nav-mobile">
+const PlanetLinksSmall = ({ planets }, ref) => (
+  <aside className={`header-nav-mobile`} ref={ref}>
     {planets.map((planet, index) => {
       const planetName = planet?.toLowerCase();
 
@@ -32,4 +33,4 @@ const PlanetLinksSmall = ({ planets }) => (
   </aside>
 );
 
-export default PlanetLinksSmall;
+export default forwardRef(PlanetLinksSmall);

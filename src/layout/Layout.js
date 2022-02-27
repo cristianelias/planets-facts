@@ -98,6 +98,10 @@ const globalCSSRules = css`
     }
   }
 
+  .--hidden {
+    display: none !important;
+  }
+
   [class^="descriptions-buttons__"]:hover button {
     background-color: #d8d8d820 !important;
     border: 1px solid transparent !important;
@@ -247,8 +251,7 @@ const globalCSSRules = css`
 
   .header-nav-mobile {
     display: none;
-    height: 100vh;
-    padding: 24px 24px 67px 24px;
+    padding: 24px 24px 0 24px;
   }
 
   .header-nav-mobile__planet {

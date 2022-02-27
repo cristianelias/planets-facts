@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import {
   changeCurrentPlanet,
   changeCurrentAspect,
-} from "../state/actionsCreators/planetsActionCreator";
+} from "../state/actionsCreators/planetsActionsCreator";
 
 // Components
 import PlanetFacts from "../components/PlanetFacts";
