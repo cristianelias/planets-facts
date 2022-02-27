@@ -7,16 +7,21 @@ const useImage = (fileName) => {
 
   useEffect(() => {
     const fetchImage = async () => {
+      let isMounted = true;
+
       try {
-        const response = await import(`../assets/${fileName}`); // change relative path to suit your needs
-        setImage(response.default);
+        const response = await import(`../assets/${fileName}`);
+
+        if (isMounted) {
+          setImage(response.default);
+        }
       } catch (err) {
         setError(err);
       } finally {
         setLoading(false);
       }
+      return () => (isMounted = false);
     };
-
     fetchImage();
   }, [fileName]);
 

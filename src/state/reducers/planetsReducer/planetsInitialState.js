@@ -20,8 +20,8 @@ const mercury = {
   radius: "2,439.7 KM",
   temperature: "430°c",
   images: {
-    planet: "planet-mercury.svg",
-    internal: "planet-mercury-internal.svg",
+    overview: "planet-mercury.svg",
+    structure: "planet-mercury-internal.svg",
     geology: "geology-mercury.png",
   },
 };
@@ -53,8 +53,8 @@ const initialState = {
       radius: "6,051.8 KM",
       temperature: "471°c",
       images: {
-        planet: "planet-venus.svg",
-        internal: "planet-venus-internal.svg",
+        overview: "planet-venus.svg",
+        structure: "planet-venus-internal.svg",
         geology: "geology-venus.png",
       },
     },
@@ -80,8 +80,8 @@ const initialState = {
       radius: "6,371 KM",
       temperature: "16°c",
       images: {
-        planet: "planet-earth.svg",
-        internal: "planet-earth-internal.svg",
+        overview: "planet-earth.svg",
+        structure: "planet-earth-internal.svg",
         geology: "geology-earth.png",
       },
     },
@@ -107,8 +107,8 @@ const initialState = {
       radius: "3,389.5 KM",
       temperature: "-28°c",
       images: {
-        planet: "planet-mars.svg",
-        internal: "planet-mars-internal.svg",
+        overview: "planet-mars.svg",
+        structure: "planet-mars-internal.svg",
         geology: "geology-mars.png",
       },
     },
@@ -135,8 +135,8 @@ const initialState = {
       radius: "69,911 KM",
       temperature: "-108°c",
       images: {
-        planet: "planet-jupiter.svg",
-        internal: "planet-jupiter-internal.svg",
+        overview: "planet-jupiter.svg",
+        structure: "planet-jupiter-internal.svg",
         geology: "geology-jupiter.png",
       },
     },
@@ -162,8 +162,8 @@ const initialState = {
       radius: "58,232 KM",
       temperature: "-138°c",
       images: {
-        planet: "planet-saturn.svg",
-        internal: "planet-saturn-internal.svg",
+        overview: "planet-saturn.svg",
+        structure: "planet-saturn-internal.svg",
         geology: "geology-saturn.png",
       },
     },
@@ -189,8 +189,8 @@ const initialState = {
       radius: "25,362 KM",
       temperature: "-195°c",
       images: {
-        planet: "planet-uranus.svg",
-        internal: "planet-uranus-internal.svg",
+        overview: "planet-uranus.svg",
+        structure: "planet-uranus-internal.svg",
         geology: "geology-uranus.png",
       },
     },
@@ -216,8 +216,8 @@ const initialState = {
       radius: "24,622 KM",
       temperature: "-201°c",
       images: {
-        planet: "planet-neptune.svg",
-        internal: "planet-neptune-internal.svg",
+        overview: "planet-neptune.svg",
+        structure: "planet-neptune-internal.svg",
         geology: "geology-neptune.png",
       },
     },

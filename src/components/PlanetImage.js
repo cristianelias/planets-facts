@@ -5,16 +5,28 @@ import { useSelector } from "react-redux";
 import useImage from "../hooks/useImage";
 
 const PlanetImage = () => {
-  const { planet } = useSelector((state) => state).planets;
-  const { image } = useImage(planet?.images?.planet);
+  const { aspect, planet } = useSelector((state) => state).planets;
+
+  const images = {
+    overview: useImage(planet?.images[["overview"]]).image,
+    structure: useImage(planet?.images[["structure"]]).image,
+    geology: useImage(planet?.images[["geology"]]).image,
+  };
 
   return (
     <div className="container-img">
       <img
-        className="content__planet-image"
-        src={image}
-        alt={`Planet ${planet?.name} outside`}
+        className="content__planet-image content__planet-image--spinning"
+        src={aspect === "geology" ? images["overview"] : images[aspect]}
+        alt={`Planet ${planet?.name}`}
       />
+      {aspect === "geology" && (
+        <img
+          className="planet-geology-image"
+          src={images["geology"]}
+          alt={`Planet ${planet?.name} geology`}
+        />
+      )}
     </div>
   );
 };

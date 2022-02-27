@@ -365,8 +365,25 @@ const globalCSSRules = css`
   .content__planet-image {
     width: 290px;
     height: 290px;
+  }
+
+  .planet-geology-image {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 150px;
+    bottom: -100px;
+  }
+
+  .content__planet-image--spinning {
     animation: planet-transform 2s linear,
       planet-movement 20s 2s linear infinite;
+  }
+
+  .content-description__paragraph {
+    min-height: 150px;
   }
 
   @keyframes planet-transform {
@@ -395,7 +412,9 @@ const globalCSSRules = css`
       transform: rotate(360deg);
     }
   }
+
   .container-img {
+    position: relative;
     animation: puls 2s 2s ease-in-out infinite alternate;
   }
 
@@ -587,7 +606,6 @@ const globalCSSRules = css`
     .content-description__paragraph {
       font-size: 11px;
       line-height: 22px;
-      min-height: 175px;
     }
 
     .content-description__source {
