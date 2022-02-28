@@ -1,8 +1,11 @@
 // Dependencies
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
-const PlanetLinksLarge = ({ planets }) => {
-  let currentPlanet = useLocation().pathname.split("/")[1];
+// Custom hooks
+import useCurrentPlanet from "../../hooks/useCurrentPlanet";
+
+const PlanetsNavLarge = ({ planets }) => {
+  const currentPlanet = useCurrentPlanet();
 
   return (
     <div className="header-nav__container-planets">
@@ -27,4 +30,4 @@ const PlanetLinksLarge = ({ planets }) => {
   );
 };
 
-export default PlanetLinksLarge;
+export default PlanetsNavLarge;

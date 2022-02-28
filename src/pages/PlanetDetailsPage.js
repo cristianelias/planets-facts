@@ -14,17 +14,19 @@ import PlanetImage from "../components/PlanetImage";
 import PlanetDescription from "../components/PlanetDescription";
 import { useEffect } from "react";
 
-const stripCurrentPlanet = (str) => str.split("/")[1];
-const stripCurrentAspect = (str) => str.split("/")[2];
+// Custom hooks
+import useCurrentPlanet from "../hooks/useCurrentPlanet";
+import useCurrentAspect from "../hooks/useCurrentAspect";
 
 const PlanetDetailsPage = () => {
   const dispatch = useDispatch();
-  let location = useLocation();
+  const currentPlanet = useCurrentPlanet();
+  const currentAspect = useCurrentAspect();
 
   useEffect(() => {
-    dispatch(changeCurrentPlanet(stripCurrentPlanet(location.pathname)));
-    dispatch(changeCurrentAspect(stripCurrentAspect(location.pathname)));
-  }, [dispatch, location]);
+    dispatch(changeCurrentPlanet(currentPlanet));
+    dispatch(changeCurrentAspect(currentAspect));
+  }, [dispatch, currentAspect, currentPlanet]);
 
   return (
     <>

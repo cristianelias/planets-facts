@@ -1,5 +1,5 @@
 // Dependencies
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
 import { StrictMode } from "react";
 import { Provider } from "react-redux";
 
@@ -19,12 +19,14 @@ const App = () => {
         <HashRouter>
           <Layout>
             <Routes>
+              <Route index element={<Navigate to="/earth/overview" />} />
               <Route path="/:planet/overview" element={<PlanetDetailsPage />} />
               <Route
                 path="/:planet/structure"
                 element={<PlanetDetailsPage />}
               />
               <Route path="/:planet/geology" element={<PlanetDetailsPage />} />
+              <Route path="*" element={<Navigate to="/earth/overview" />} />
             </Routes>
           </Layout>
         </HashRouter>

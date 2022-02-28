@@ -6,6 +6,7 @@ import useImage from "../hooks/useImage";
 
 const PlanetImage = () => {
   const { aspect, planet } = useSelector((state) => state).planets;
+  const planetName = planet?.name;
 
   const images = {
     overview: useImage(planet?.images[["overview"]]).image,
@@ -16,15 +17,15 @@ const PlanetImage = () => {
   return (
     <div className="container-img">
       <img
-        className="content__planet-image content__planet-image--spinning"
+        className={`content__planet-image content__planet-image--spinning ${planetName}-image`}
         src={aspect === "geology" ? images["overview"] : images[aspect]}
-        alt={`Planet ${planet?.name}`}
+        alt={`Planet ${planetName}`}
       />
       {aspect === "geology" && (
         <img
           className="planet-geology-image"
           src={images["geology"]}
-          alt={`Planet ${planet?.name} geology`}
+          alt={`Planet ${planetName} geology`}
         />
       )}
     </div>

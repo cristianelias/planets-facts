@@ -10,8 +10,8 @@ import useComponentVisible from "../hooks/useComponentVisible";
 import hamburguerIcon from "../assets/icon-hamburger.svg";
 
 // Components
-import PlanetLinksLarge from "./PlanetLinksLarge";
-import PlanetLinksSmall from "./PlanetLinksSmall";
+import PlanetsNavLarge from "./PlanetsNav/PlanetsNavLarge";
+import PlanetsNavSmall from "./PlanetsNav/PlanetsNavSmall";
 
 const Header = () => {
   const { refComponent, refTrigger, isComponentVisible } =
@@ -23,7 +23,7 @@ const Header = () => {
     <header>
       <nav className="header-nav">
         <h2 className="header-nav__title">THE PLANETS</h2>
-        <PlanetLinksLarge planets={planetsArray} />
+        <PlanetsNavLarge planets={planetsArray} />
 
         <img
           className="header-nav__dropdown-mobile"
@@ -33,7 +33,7 @@ const Header = () => {
         />
       </nav>
       {isComponentVisible && (
-        <PlanetLinksSmall planets={planetsArray} ref={refComponent} />
+        <PlanetsNavSmall planets={planetsArray} ref={refComponent} />
       )}
     </header>
   );

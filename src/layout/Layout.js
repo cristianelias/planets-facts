@@ -4,7 +4,7 @@ import emotionReset from "emotion-reset";
 
 // Components
 import Header from "../components/Header";
-import ActionsMobile from "../components/ActionsMobile";
+import AspectsNavSmall from "../components/AspectsNav/AspectsNavSmall";
 
 // Assets
 import "@fontsource/antonio/500.css";
@@ -25,6 +25,11 @@ const globalCSSRules = css`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    user-select: none;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
   }
 
   :root {
@@ -102,55 +107,55 @@ const globalCSSRules = css`
     display: none !important;
   }
 
-  [class^="descriptions-buttons__"]:hover button {
+  [class^="aspects-nav-large__"]:hover button {
     background-color: #d8d8d820 !important;
     border: 1px solid transparent !important;
   }
 
-  .descriptions-buttons__mercury:hover button,
-  .descriptions-buttons__mercury--selected button {
+  .aspects-nav-large__mercury:hover button,
+  .aspects-nav-large__mercury--selected button {
     background-color: var(--mercury-color);
     border: solid 1px transparent;
   }
 
-  .descriptions-buttons__venus:hover button,
-  .descriptions-buttons__venus--selected button {
+  .aspects-nav-large__venus:hover button,
+  .aspects-nav-large__venus--selected button {
     background-color: var(--venus-color);
     border: solid 1px transparent;
   }
 
-  .descriptions-buttons__earth:hover button,
-  .descriptions-buttons__earth--selected button {
+  .aspects-nav-large__earth:hover button,
+  .aspects-nav-large__earth--selected button {
     background-color: var(--earth-color);
     border: solid 1px transparent;
   }
 
-  .descriptions-buttons__mars:hover button,
-  .descriptions-buttons__mars--selected button {
+  .aspects-nav-large__mars:hover button,
+  .aspects-nav-large__mars--selected button {
     background-color: var(--mars-color);
     border: solid 1px transparent;
   }
 
-  .descriptions-buttons__jupiter:hover button,
-  .descriptions-buttons__jupiter--selected button {
+  .aspects-nav-large__jupiter:hover button,
+  .aspects-nav-large__jupiter--selected button {
     background-color: var(--jupiter-color);
     border: solid 1px transparent;
   }
 
-  .descriptions-buttons__saturn:hover button,
-  .descriptions-buttons__saturn--selected button {
+  .aspects-nav-large__saturn:hover button,
+  .aspects-nav-large__saturn--selected button {
     background-color: var(--saturn-color);
     border: solid 1px transparent;
   }
 
-  .descriptions-buttons__neptune:hover button,
-  .descriptions-buttons__neptune--selected button {
+  .aspects-nav-large__neptune:hover button,
+  .aspects-nav-large__neptune--selected button {
     background-color: var(--neptune-color);
     border: solid 1px transparent;
   }
 
-  .descriptions-buttons__uranus:hover button,
-  .descriptions-buttons__uranus--selected button {
+  .aspects-nav-large__uranus:hover button,
+  .aspects-nav-large__uranus--selected button {
     background-color: var(--uranus-color);
     border: solid 1px transparent;
   }
@@ -318,14 +323,14 @@ const globalCSSRules = css`
     background-color: var(--neptune-color);
   }
 
-  .descriptions-buttons-mobile {
+  .aspects-nav-small {
     display: none;
     justify-content: space-between;
     border-bottom: var(--border);
     padding: 0px 24px;
   }
 
-  .descriptions-buttons-mobile__button {
+  [class^="aspects-nav-small__button"] {
     background-color: transparent;
     cursor: pointer;
     border: none;
@@ -340,14 +345,55 @@ const globalCSSRules = css`
     transition: all 0.3s;
     position: relative;
     border-bottom: solid 4px transparent;
+    height: 100%;
   }
 
-  .descriptions-buttons-mobile__button:hover {
+  [class$="--active"] [class^="aspects-nav-small__button"],
+  [class^="aspects-nav-small__button"]:hover {
     opacity: 1;
-    border-bottom: solid 4px var(--mercury-color);
   }
 
-  .descriptions-buttons-mobile__container-button-line {
+  .aspects-nav-small__link-mercury--active button,
+  .aspects-nav-small__button-mercury:hover {
+    border-color: var(--mercury-color);
+  }
+
+  .aspects-nav-small__link-venus--active button,
+  .aspects-nav-small__button-venus:hover {
+    border-color: var(--venus-color);
+  }
+
+  .aspects-nav-small__link-earth--active button,
+  .aspects-nav-small__button-earth:hover {
+    border-color: var(--earth-color);
+  }
+
+  .aspects-nav-small__link-mars--active button,
+  .aspects-nav-small__button-mars:hover {
+    border-color: var(--mars-color);
+  }
+
+  .aspects-nav-small__link-jupiter--active button,
+  .aspects-nav-small__button-jupiter:hover {
+    border-color: var(--jupiter-color);
+  }
+
+  .aspects-nav-small__link-saturn--active button,
+  .aspects-nav-small__button-saturn:hover {
+    border-color: var(--saturn-color);
+  }
+
+  .aspects-nav-small__link-uranus--active button,
+  .aspects-nav-small__button-uranus:hover {
+    border-color: var(--uranus-color);
+  }
+
+  .aspects-nav-small__link-neptune--active button,
+  .aspects-nav-small__button-neptune:hover {
+    border-color: var(--neptune-color);
+  }
+
+  .aspects-nav-small__link {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -365,9 +411,37 @@ const globalCSSRules = css`
     margin-bottom: 87px;
   }
 
-  .content__planet-image {
+  .mercury-image {
     width: 290px;
     height: 290px;
+  }
+  .venus-image {
+    width: 400px;
+    height: 400px;
+  }
+  .earth-image {
+    width: 450px;
+    height: 450px;
+  }
+  .mars-image {
+    height: 336px;
+    width: 336px;
+  }
+  .jupiter-image {
+    height: 582px;
+    width: 582px;
+  }
+  .saturn-image {
+    height: 666px;
+    width: 666px;
+  }
+  .uranus-image {
+    height: 458px;
+    width: 458px;
+  }
+  .neptune-image {
+    height: 450px;
+    width: 450px;
   }
 
   .planet-geology-image {
@@ -439,6 +513,11 @@ const globalCSSRules = css`
     width: 350px;
   }
 
+  .content-description__title,
+  .content-description__paragraph {
+    user-select: text;
+  }
+
   .content-description__title {
     font-family: var(--text-primary-font-family);
     font-weight: var(--text-primary-font-weight);
@@ -472,17 +551,17 @@ const globalCSSRules = css`
     height: 12px;
   }
 
-  .descriptions-buttons {
+  .aspects-nav-large {
     display: flex;
     flex-direction: column;
     gap: 16px;
   }
 
-  .descriptions-buttons > li {
+  .aspects-nav-large > li {
     list-style: none;
   }
 
-  .descriptions-buttons__button {
+  .aspects-nav-large__button {
     cursor: pointer;
     width: 350px;
     height: 48px;
@@ -499,7 +578,7 @@ const globalCSSRules = css`
     transition: all 0.3s;
   }
 
-  .descriptions-buttons__number {
+  .aspects-nav-large__number {
     opacity: 0.5;
     margin-right: 25px;
   }
@@ -534,6 +613,41 @@ const globalCSSRules = css`
   }
 
   @media (max-width: 1140px) {
+    .mercury-image {
+      width: 184px;
+      height: 184px;
+    }
+    .venus-image {
+      width: 253px;
+      height: 253px;
+    }
+
+    .earth-image {
+      width: 285px;
+      height: 285px;
+    }
+    .mars-image {
+      height: 213px;
+      width: 213px;
+    }
+
+    .jupiter-image {
+      height: 369px;
+      width: 369px;
+    }
+    .saturn-image {
+      height: 422px;
+      width: 422px;
+    }
+    .uranus-image {
+      height: 290px;
+      width: 290px;
+    }
+    .neptune-image {
+      height: 285px;
+      width: 285px;
+    }
+
     .main-content {
       gap: 0;
       justify-content: space-between;
@@ -560,12 +674,13 @@ const globalCSSRules = css`
     .header-nav {
       height: 159px;
       flex-direction: column;
-      padding: 32px 51px 27px 51px;
+      padding: 32px 51px 0 51px;
     }
 
     .header-nav__planet {
-      padding: 0;
       border-top: unset;
+      padding-bottom: 0 0 23px 0;
+      border-bottom: 4px solid transparent;
     }
 
     .header-nav__planet:hover {
@@ -586,11 +701,6 @@ const globalCSSRules = css`
 
     .main-content {
       flex-direction: column;
-    }
-
-    .content__planet-image {
-      width: 184px;
-      height: 184px;
     }
 
     .content-description {
@@ -615,7 +725,7 @@ const globalCSSRules = css`
       margin: 32px 0 0 0;
       font-size: 12px;
     }
-    .descriptions-buttons__button {
+    .aspects-nav-large__button {
       width: 281px;
       height: 40px;
       padding: 0 20px 0 20px;
@@ -623,7 +733,7 @@ const globalCSSRules = css`
       letter-spacing: 1.9px;
     }
 
-    .descriptions-buttons__number {
+    .aspects-nav-large__number {
       margin-right: 17px;
     }
 
@@ -633,6 +743,41 @@ const globalCSSRules = css`
   }
 
   @media (max-width: 620px) {
+    TABLETTTT .mercury-image {
+      width: 111px;
+      height: 111px;
+    }
+    .venus-image {
+      width: 154px;
+      height: 154px;
+    }
+
+    .earth-image {
+      width: 173px;
+      height: 173px;
+    }
+    .mars-image {
+      height: 129px;
+      width: 129px;
+    }
+
+    .jupiter-image {
+      height: 224px;
+      width: 224px;
+    }
+    .saturn-image {
+      height: 159px;
+      width: 159px;
+    }
+    .uranus-image {
+      height: 176px;
+      width: 176px;
+    }
+    .neptune-image {
+      height: 173px;
+      width: 173px;
+    }
+
     .header-nav__container-planets {
       display: none;
     }
@@ -647,7 +792,7 @@ const globalCSSRules = css`
       padding: 16px 24px;
     }
 
-    .descriptions-buttons-mobile {
+    .aspects-nav-small {
       display: flex;
     }
 
@@ -682,7 +827,7 @@ const globalCSSRules = css`
       margin: 32px 0 28px 0;
     }
 
-    .descriptions-buttons {
+    .aspects-nav-large {
       display: none;
     }
 
@@ -717,7 +862,7 @@ const Layout = ({ children }) => {
       <Global styles={globalCSSRules} />
 
       <Header />
-      <ActionsMobile />
+      <AspectsNavSmall />
       <section className="content">{children}</section>
     </>
   );

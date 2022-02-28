@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import iconSource from "../assets/icon-source.svg";
 
 // Components
-import DescriptionNav from "./DescriptionNav";
+import AspectsNavLarge from "./AspectsNav/AspectsNavLarge";
 
 const PlanetDescription = () => {
   const { planet, aspect } = useSelector((state) => state).planets;
@@ -37,7 +37,7 @@ const PlanetDescription = () => {
             </div>
           </div>
 
-          <DescriptionNav />
+          <AspectsNavLarge />
         </div>
       )}
     </>
