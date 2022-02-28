@@ -1,5 +1,5 @@
 // Dependencies
-import { useLocation } from "react-router-dom";
+import styled from "@emotion/styled";
 import { useDispatch } from "react-redux";
 
 // Action creators
@@ -18,6 +18,29 @@ import { useEffect } from "react";
 import useCurrentPlanet from "../hooks/useCurrentPlanet";
 import useCurrentAspect from "../hooks/useCurrentAspect";
 
+// Styles
+const MainContent = styled.main`
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 27%;
+  margin-bottom: 87px;
+
+  @media (max-width: 1140px) {
+    gap: 0;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 930px) {
+    flex-direction: column;
+    margin-bottom: 27px;
+  }
+
+  @media (max-width: 620px) {
+    margin: 0;
+  }
+`;
+
 const PlanetDetailsPage = () => {
   const dispatch = useDispatch();
   const currentPlanet = useCurrentPlanet();
@@ -30,10 +53,10 @@ const PlanetDetailsPage = () => {
 
   return (
     <>
-      <main className="main-content">
+      <MainContent>
         <PlanetImage />
         <PlanetDescription />
-      </main>
+      </MainContent>
       <PlanetFacts />
     </>
   );
