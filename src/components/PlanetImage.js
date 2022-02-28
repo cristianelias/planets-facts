@@ -54,7 +54,8 @@ const BaseImage = styled.img`
     }
   }
 
-  animation: planet-transform 2s linear, planet-movement 20s 2s linear infinite;
+  animation: planet-transform 0.4s linear,
+    planet-movement 20s 2s linear infinite;
 
   @media (max-width: 620px) {
     width: 111px;
@@ -70,6 +71,11 @@ const GeologyImage = styled.img`
   margin-right: auto;
   width: 150px;
   bottom: -100px;
+
+  @media (max-width: 620px) {
+    width: 90px;
+    bottom: -83px;
+  }
 `;
 
 const PlanetImage = () => {

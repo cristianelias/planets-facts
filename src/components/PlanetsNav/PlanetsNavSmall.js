@@ -77,10 +77,16 @@ const Container = styled.aside`
   z-index: 2;
   background-image: url(${stars});
   animation: stars linear 10s 2s infinite alternate;
+  height: 150vh;
 `;
 
-const PlanetsNavSmall = ({ planets }, ref) => (
-  <Container ref={ref}>
+const PlanetsNavSmall = ({ planets, isComponentVisible }, ref) => (
+  <Container
+    ref={ref}
+    css={css`
+      ${isComponentVisible ? "" : "visibility: hidden"}
+    `}
+  >
     {planets.map((planet, index) => {
       const planetName = planet?.toLowerCase();
       const StyledPlanetCircle = styled(BasePlanetCircle)`

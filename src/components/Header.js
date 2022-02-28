@@ -78,9 +78,11 @@ const Header = () => {
           ref={refTrigger}
         />
       </Nav>
-      {isComponentVisible && (
-        <PlanetsNavSmall planets={planetsArray} ref={refComponent} />
-      )}
+      <PlanetsNavSmall
+        planets={planetsArray}
+        ref={refComponent}
+        isComponentVisible={isComponentVisible}
+      />
     </header>
   );
 };
