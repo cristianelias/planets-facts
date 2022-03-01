@@ -79,7 +79,7 @@ const globalCSSRules = css`
   }
 
   body {
-    min-width: 300px;
+    min-width: 320px;
     font-family: var(--text-regular-font-family);
     background-color: var(--background-color);
     color: var(--letters-color);
@@ -109,11 +109,11 @@ const ContentSection = styled.section`
   padding: 126px 11.5% 56px 11.5%;
 
   @media (max-width: 930px) {
-    padding: 146px 39px 36px 39px;
+    padding: 0 40px 36px 40px;
   }
 
   @media (max-width: 620px) {
-    padding: 95px 24px 47px 24px;
+    padding: 0 24px 47px 24px;
   }
 `;
 

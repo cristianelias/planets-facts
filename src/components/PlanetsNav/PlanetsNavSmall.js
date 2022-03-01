@@ -74,10 +74,10 @@ const Container = styled.aside`
   left: 0;
   right: 0;
   background-color: var(--background-color);
-  z-index: 2;
+  z-index: 99999;
   background-image: url(${stars});
   animation: stars linear 10s 2s infinite alternate;
-  height: 150vh;
+  height: 100vh;
 `;
 
 const PlanetsNavSmall = ({ planets, isComponentVisible }, ref) => (

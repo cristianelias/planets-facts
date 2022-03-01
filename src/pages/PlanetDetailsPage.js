@@ -20,10 +20,10 @@ import useCurrentAspect from "../hooks/useCurrentAspect";
 
 // Styles
 const MainContent = styled.main`
+  height: 540px;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  gap: 27%;
+  justify-content: space-between;
   margin-bottom: 87px;
 
   @media (max-width: 1140px) {
@@ -34,6 +34,7 @@ const MainContent = styled.main`
   @media (max-width: 930px) {
     flex-direction: column;
     margin-bottom: 27px;
+    height: unset;
   }
 
   @media (max-width: 620px) {

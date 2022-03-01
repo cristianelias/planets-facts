@@ -4,115 +4,91 @@ import { css } from "@emotion/react";
 
 const planetStyles = {
   mercury: css`
-    width: 290px;
-    height: 290px;
+    width: 38% !important;
 
-    @media (max-width: 1140px) {
-      width: 184px;
-      height: 184px;
+    @media (max-width: 930px) {
+      width: 184px !important;
     }
 
     @media (max-width: 620px) {
-      width: 111px;
-      height: 111px;
+      width: 111px !important;
     }
   `,
   venus: css`
-    width: 400px;
-    height: 400px;
+    width: 52.6% !important;
 
-    @media (max-width: 1140px) {
-      width: 253px;
-      height: 253px;
+    @media (max-width: 930px) {
+      width: 253px !important;
     }
 
     @media (max-width: 620px) {
-      width: 154px;
-      height: 154px;
+      width: 154px !important;
     }
   `,
   earth: css`
-    width: 450px;
-    height: 450px;
+    width: 59% !important;
 
-    @media (max-width: 1140px) {
-      width: 285px;
-      height: 285px;
+    @media (max-width: 930px) {
+      width: 285px !important;
     }
 
     @media (max-width: 620px) {
-      width: 173px;
-      height: 173px;
+      width: 173px !important;
     }
   `,
   mars: css`
-    height: 336px;
-    width: 336px;
+    width: 44% !important;
 
-    @media (max-width: 1140px) {
-      height: 213px;
-      width: 213px;
+    @media (max-width: 930px) {
+      width: 213px !important;
     }
 
     @media (max-width: 620px) {
-      height: 129px;
-      width: 129px;
+      width: 129px !important;
     }
   `,
   jupiter: css`
-    height: 582px;
-    width: 582px;
+    width: 76.5% !important;
 
-    @media (max-width: 1140px) {
-      height: 369px;
-      width: 369px;
+    @media (max-width: 930px) {
+      width: 369px !important;
     }
 
     @media (max-width: 620px) {
-      height: 224px;
-      width: 224px;
+      width: 224px !important;
     }
   `,
   saturn: css`
-    height: 666px;
-    width: 666px;
+    width: 87% !important;
 
-    @media (max-width: 1140px) {
-      height: 422px;
-      width: 422px;
+    @media (max-width: 930px) {
+      width: 422px !important;
     }
 
     @media (max-width: 620px) {
-      height: 159px;
-      width: 159px;
+      width: 256px !important;
     }
   `,
   uranus: css`
-    height: 458px;
-    width: 458px;
+    width: 60% !important;
 
-    @media (max-width: 1140px) {
-      height: 290px;
-      width: 290px;
+    @media (max-width: 930px) {
+      width: 290px !important;
     }
 
     @media (max-width: 620px) {
-      height: 176px;
-      width: 176px;
+      width: 176px !important;
     }
   `,
   neptune: css`
-    height: 450px;
-    width: 450px;
+    width: 59% !important;
 
-    @media (max-width: 1140px) {
-      height: 285px;
-      width: 285px;
+    @media (max-width: 930px) {
+      width: 285px !important;
     }
 
     @media (max-width: 620px) {
-      height: 173px;
-      width: 173px;
+      width: 173px !important;
     }
   `,
 };

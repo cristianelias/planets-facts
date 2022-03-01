@@ -12,6 +12,7 @@ import AspectsNavLarge from "./AspectsNav/AspectsNavLarge";
 // Styles
 const Container = styled.div`
   width: 350px;
+  z-index: 10;
 
   @media (max-width: 930px) {
     width: 100%;
@@ -19,10 +20,11 @@ const Container = styled.div`
     display: flex;
     align-items: center;
     gap: 10%;
+    margin-top: 0;
   }
 
   @media (max-width: 620px) {
-    margin-top: 98px;
+    margin-top: 0px;
   }
 `;
 
@@ -64,6 +66,8 @@ const Description = styled.p`
   @media (max-width: 930px) {
     font-size: 11px;
     line-height: 22px;
+
+    min-height: unset;
   }
 `;
 

@@ -8,8 +8,13 @@ import usePlanetImagesStyles from "../hooks/usePlanetImageStyles";
 
 // Styles
 const Container = styled.div`
-  position: relative;
+  width: 100%;
   animation: pulse 2s 2s ease-in-out infinite alternate;
+
+  height: 460px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   @keyframes pulse {
     0% {
@@ -24,9 +29,17 @@ const Container = styled.div`
       transform: scale(1);
     }
   }
+
+  @media (max-width: 620px) {
+    height: 304px;
+  }
 `;
 
 const BaseImage = styled.img`
+  position: relative;
+  max-width: 700px;
+  width: 100%;
+
   @keyframes planet-transform {
     0% {
       transform: scale(7) rotate(360deg);
@@ -56,32 +69,45 @@ const BaseImage = styled.img`
 
   animation: planet-transform 0.4s linear,
     planet-movement 20s 2s linear infinite;
-
-  @media (max-width: 620px) {
-    width: 111px;
-    height: 111px;
-  }
 `;
 
 const GeologyImage = styled.img`
+  max-width: 700px;
   position: absolute;
   left: 0;
   right: 0;
   margin-left: auto;
   margin-right: auto;
   width: 150px;
-  bottom: -100px;
+  bottom: 0;
+
+  @keyframes delay {
+    0% {
+      opacity: 0;
+    }
+    80% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  animation: delay 0.4s;
 
   @media (max-width: 620px) {
     width: 90px;
-    bottom: -83px;
   }
 `;
 
 const PlanetImage = () => {
   const { aspect, planet } = useSelector((state) => state).planets;
   const planetName = planet?.name;
-  const PlanetImage = usePlanetImagesStyles(BaseImage, planetName);
+
+  const PlanetImage = usePlanetImagesStyles(
+    BaseImage,
+    planetName.toLowerCase()
+  );
 
   const images = {
     overview: useImage(planet?.images[["overview"]]).image,
