@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 
 // Custom hooks
 import useCurrentPlanet from "../../hooks/useCurrentPlanet";
+import { useEffect } from "react";
 
 // Styles
 const Container = styled.div`
@@ -113,20 +114,19 @@ const PlanetsNavLarge = ({ planets }) => {
     <Container>
       {planets.map((planet, index) => {
         const planetName = planet?.toLowerCase();
-
         const StyledNav = styled(StyledBaseNav)`
           ${planetStyles[planetName]}
         `;
+
+        const currentClass = `${planetName} ${
+          planetName === currentPlanet ? "active" : ""
+        }`;
 
         return (
           <StyledNav
             key={`${planet}x${index}`}
             to={`/${planetName}/overview`}
-            className={() =>
-              planetName === currentPlanet
-                ? `${planetName} active`
-                : `${planetName}`
-            }
+            className={currentClass}
           >
             {planet?.toUpperCase()}
           </StyledNav>

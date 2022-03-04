@@ -1,20 +1,30 @@
 import { useEffect, useState } from "react";
 
-const useImage = (fileName) => {
+const useImage = (paths, planetName) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [image, setImage] = useState(null);
+  const [images, setImages] = useState([]);
 
   useEffect(() => {
     const fetchImage = async () => {
       let isMounted = true;
 
       try {
-        const response = await import(`../assets/${fileName}`);
+        const promises = paths.map(({ fileName }) =>
+          import(`../assets/${fileName}`)
+        );
 
-        if (isMounted) {
-          setImage(response.default);
-        }
+        Promise.all(promises).then((fulfilledPromises) => {
+          if (isMounted) {
+            const response = {};
+
+            fulfilledPromises.forEach((fulfilled, index) => {
+              response[paths[index].aspect] = fulfilled.default;
+            });
+
+            setImages(response);
+          }
+        });
       } catch (err) {
         setError(err);
       } finally {
@@ -23,12 +33,12 @@ const useImage = (fileName) => {
       return () => (isMounted = false);
     };
     fetchImage();
-  }, [fileName]);
+  }, [planetName]);
 
   return {
     loading,
     error,
-    image,
+    images,
   };
 };
 

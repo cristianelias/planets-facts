@@ -68,7 +68,7 @@ const BaseImage = styled.img`
   }
 
   animation: planet-transform 0.4s linear,
-    planet-movement 20s 2s linear infinite;
+    planet-movement 20s 0.4s linear infinite;
 `;
 
 const GeologyImage = styled.img`
@@ -95,8 +95,14 @@ const GeologyImage = styled.img`
 
   animation: delay 0.4s;
 
+  @media (max-width: 930px) {
+    width: 130px;
+    bottom: 16px;
+  }
+
   @media (max-width: 620px) {
-    width: 90px;
+    width: 80px;
+    bottom: 32px;
   }
 `;
 
@@ -109,25 +115,41 @@ const PlanetImage = () => {
     planetName.toLowerCase()
   );
 
-  const images = {
-    overview: useImage(planet?.images[["overview"]]).image,
-    structure: useImage(planet?.images[["structure"]]).image,
-    geology: useImage(planet?.images[["geology"]]).image,
-  };
+  const { loading, images } = useImage(
+    [
+      {
+        fileName: planet?.images[["overview"]],
+        aspect: "overview",
+      },
+      {
+        fileName: planet?.images[["structure"]],
+        aspect: "structure",
+      },
+      {
+        fileName: planet?.images[["geology"]],
+        aspect: "geology",
+      },
+    ],
+    planetName
+  );
 
   return (
-    <Container>
-      <PlanetImage
-        src={aspect === "geology" ? images["overview"] : images[aspect]}
-        alt={`Planet ${planetName}`}
-      />
-      {aspect === "geology" && (
-        <GeologyImage
-          src={images["geology"]}
-          alt={`Planet ${planetName} geology`}
-        />
+    <>
+      {!loading && (
+        <Container>
+          <PlanetImage
+            src={aspect === "geology" ? images["overview"] : images[aspect]}
+            alt={`Planet ${planetName}`}
+          />
+          {aspect === "geology" && (
+            <GeologyImage
+              src={images["geology"]}
+              alt={`Planet ${planetName} geology`}
+            />
+          )}
+        </Container>
       )}
-    </Container>
+    </>
   );
 };
 export default PlanetImage;

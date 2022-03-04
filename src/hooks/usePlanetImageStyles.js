@@ -5,6 +5,7 @@ import { css } from "@emotion/react";
 const planetStyles = {
   mercury: css`
     width: 38% !important;
+    min-width: 184px;
 
     @media (max-width: 930px) {
       width: 184px !important;
@@ -12,6 +13,7 @@ const planetStyles = {
 
     @media (max-width: 620px) {
       width: 111px !important;
+      min-width: unset;
     }
   `,
   venus: css`
@@ -38,6 +40,7 @@ const planetStyles = {
   `,
   mars: css`
     width: 44% !important;
+    min-width: 213px;
 
     @media (max-width: 930px) {
       width: 213px !important;
@@ -45,6 +48,7 @@ const planetStyles = {
 
     @media (max-width: 620px) {
       width: 129px !important;
+      min-width: unset;
     }
   `,
   jupiter: css`
