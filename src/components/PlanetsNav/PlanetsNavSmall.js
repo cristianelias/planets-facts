@@ -77,7 +77,7 @@ const Container = styled.aside`
   z-index: 99999;
   background-image: url(${stars});
   animation: stars linear 10s 2s infinite alternate;
-  height: 100vh;
+  height: 140vh;
 `;
 
 const PlanetsNavSmall = ({ planets, isComponentVisible }, ref) => (
